@@ -1,0 +1,12 @@
+<ul id="login">
+  <li>
+    用户名：<input type="text" ng-model="username" ng-input="getUser()">
+    <p>你的用户名是：{{username}}</p>
+  </li>
+  <li>
+    密码：<input type="password">
+  </li>
+  <li>
+    <input type="button" value="登录" ng-click="submitForm()">
+  </li>
+</ul>

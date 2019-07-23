@@ -1,0 +1,55 @@
+$fontSize: 12 !global;
+$px1: 1rem / $fontSize !global;
+$px2: 2rem / $fontSize !global;
+$px3: 3rem / $fontSize !global;
+$px4: 4rem / $fontSize !global;
+$px5: 5rem / $fontSize !global;
+$px6: 6rem / $fontSize !global;
+$px7: 7rem / $fontSize !global;
+$px8: 8rem / $fontSize !global;
+$px9: 9rem / $fontSize !global;
+$px10: 10rem / $fontSize !global;
+$px11: 11rem / $fontSize !global;
+$px12: 12rem / $fontSize !global;
+$px13: 13rem / $fontSize !global;
+$px14: 14rem / $fontSize !global;
+$px15: 15rem / $fontSize !global;
+$px16: 16rem / $fontSize !global;
+$px17: 17rem / $fontSize !global;
+$px18: 18rem / $fontSize !global;
+
+html,body,h1,h2,h3,h4,h5,h6,p,input,img,ul,ol,dl,li,dt,dd,textarea,figure{
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	width: 100%;
+	height:100%;
+}
+body{
+	display:flex;
+	flex-direction: column;
+}
+input,select,textarea{
+	background: #fff;
+  border: $px1 solid #666;
+  outline-style: none;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6,i{
+	font-weight: normal;
+}
+*{
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* 
+* 视觉1px  = 0.08333333333333333rem * 根部字体大小 ÷ dpr;
+* 视觉12px = 1rem                   * 根部字体大小 ÷ dpr;
+*/

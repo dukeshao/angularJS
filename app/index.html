@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/main.css">
+    <script>
+      //不同终端上的字体视觉大小统一为 = visualFontSize
+      var visualFontSize = 12;
+      var dpr = window.devicePixelRatio;
+      var scale = 1 / dpr;
+      var mstr = `initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}, user-scalable=no`;
+      document.getElementsByTagName("html")[0].style.fontSize = /Macintosh|Windows/i.test(navigator.userAgent) ?
+        visualFontSize + "px" : dpr * visualFontSize + "px";
+      document.getElementsByName("viewport")[0].content = mstr;
+      console.log(navigator.userAgent)
+      console.log(/Macintosh|Windows/i.test(navigator.userAgent))
+    </script>
+
+    <link rel="stylesheet" href="ngProgress.css">
+  </head>
+
+  <body ng-app="app">
+    <div ng-view class="cont"></div>
+    <ul class="icon_box">
+      <li>
+        <a href="#/">首页</a>
+      </li>
+      <li>
+        <a href="#/login">登录页面</a>
+      </li>
+    </ul>
+    <script src="https://cdn.staticfile.org/angular.js/1.4.14/angular.min.js"></script>
+    <script src="https://cdn.staticfile.org/angular.js/1.4.14/angular-route.min.js"></script>
+    <script src="lib/ngProgress/ngprogress.min.js"></script>
+    <script src="app.route.js"></script>
+  </body>
+
+</html>
