@@ -1,39 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style/main.css">
-    <script>
-      //不同终端上的字体视觉大小统一为 = visualFontSize
-      var visualFontSize = 12;
-      var dpr = window.devicePixelRatio;
-      var scale = 1 / dpr;
-      var mstr = `initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}, user-scalable=no`;
-      document.getElementsByTagName("html")[0].style.fontSize = /Macintosh|Windows/i.test(navigator.userAgent) ?
-        visualFontSize + "px" : dpr * visualFontSize + "px";
-      document.getElementsByName("viewport")[0].content = mstr;
-      console.log(navigator.userAgent)
-      console.log(/Macintosh|Windows/i.test(navigator.userAgent))
-    </script>
-
-    <link rel="stylesheet" href="ngProgress.css">
+    <title>AngularJS路由实例</title>
   </head>
 
-  <body ng-app="app">
-    <div ng-view class="cont"></div>
-    <ul class="icon_box">
-      <li>
-        <a href="#/">首页</a>
-      </li>
-      <li>
-        <a href="#/login">登录页面</a>
-      </li>
+  <body>
+    <h2>AngularJS 路由应用</h2>
+    <ul>
+      <li><a ui-sref="home">首页</a></li>
+      <li><a ui-sref="computers">电脑</a></li>
+      <li><a ui-sref="printers">打印机</a></li>
+      <li><a ui-sref="printers.one">打印机1号</a></li>
+      <li><a ui-sref="printers.two">打印机2号</a></li>
     </ul>
-    <script src="https://cdn.staticfile.org/angular.js/1.4.14/angular.min.js"></script>
-    <script src="https://cdn.staticfile.org/angular.js/1.4.14/angular-route.min.js"></script>
-    <script src="lib/ngProgress/ngprogress.min.js"></script>
+    <div ui-view></div>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
     <script src="app.route.js"></script>
   </body>
 
