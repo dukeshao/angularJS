@@ -1,9 +1,40 @@
 <div id="home_page">
   这是首页
   <ul>
-    <li>1</li>
-    <li>1</li>
-    <li>1</li>
+    <li ng-repeat="item in datalist">
+      <h6>第 {{$index + 1}} 个</h6>
+      <p ng-repeat="(key,val) in item">{{key}}：{{val}} - {{$index}}</p>
+    </li>
   </ul>
   <p>{{username}}</p>
+
+  <input type="button" value="显示/隐藏" ng-click="toggleShow()">
+  <input type="button" value="添加/移除" ng-click="toggleAdd()">
+  <input type="button" value="ngHide" ng-click="toggleHide()">
+  <input type="button" value="双击" ng-dblclick="countPlus()" />
+  <input type="button" value="更换水果" ng-click="toggleFruit()">
+  <p ng-show="show">利用"display:none" - 显示/隐藏</p>
+  <p ng-if="add">利用增加/移除 DOM 节点 - 添加/移除</p>
+  <p ng-hide="hide">ng-hide 为 false 时显示这句话</p>
+  <p>双击数字加加{{count}}</p>
+  <div ng-switch="currentFruit">
+    <div ng-switch-when="apple">
+      <h5>这是水果apple</h5>
+      <p>苹果</p>
+    </div>
+    <div ng-switch-when="banana">
+      <h5>这是水果banana</h5>
+      <p>香蕉</p>
+    </div>
+    <div ng-switch-default>
+      <p>你尚未选择任何水果</p>
+    </div>
+  </div>
+  <form ng-app="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
+  </form>
+
+  <p>在输入框中输入你的邮箱地址，如果不是一个合法的邮箱地址，会弹出提示信息。</p>
 </div>
